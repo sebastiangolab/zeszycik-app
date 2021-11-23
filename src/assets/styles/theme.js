@@ -4,7 +4,7 @@ export const theme = {
     black: '#333',
     white: '#fff',
   },
-  fontSizes: {
+  fontSize: {
     headerTitle: '25px',
     xl: '20px',
     l: '18px',
