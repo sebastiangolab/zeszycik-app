@@ -1,11 +1,9 @@
-import styled from 'styled-components';
+import styled from 'styled-components/native';
 
-export const Wrapper = styled.h1`
-  height: 50px;
+export const Wrapper = styled.Text`
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 11px 15px;
+  text-align: center;
   font-weight: 400;
   font-size: ${({ theme }) => theme.fontSize.headerTitle};
   color: ${({ theme }) => theme.colors.white};

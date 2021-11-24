@@ -1,10 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from 'views/App';
+import { AppProviders } from 'providers/AppProviders';
+import { MainTemplate } from 'templates/MainTemplate/MainTemplate';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+export const Root = () => {
+  return (
+    <AppProviders>
+      <MainTemplate />
+    </AppProviders>
+  );
+};

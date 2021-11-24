@@ -1,9 +1,10 @@
 import React from 'react';
 import { Wrapper } from './Header.styles';
-import PropTypes from 'prop-types';
+import { useLocation } from 'react-router-dom';
+import { getHeaderTitle } from 'helpers/getHeaderTitle';
 
-export const Header = ({ title = 'Zeszycik' }) => <Wrapper>{title}</Wrapper>;
+export const Header = () => {
+  const locations = useLocation();
 
-Header.propTypes = {
-  title: PropTypes.string,
+  return <Wrapper>{getHeaderTitle(locations.pathname)}</Wrapper>;
 };

@@ -1,8 +1,7 @@
 {
   "expo": {
-    "entryPoint": "./src/Root.js",
-    "name": "notes-debts",
-    "slug": "notes-debts",
+    "name": "Zeszycik",
+    "slug": "Zeszycik",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./icons/icon.png",
