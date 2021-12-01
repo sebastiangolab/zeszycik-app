@@ -5,7 +5,7 @@ export const Wrapper = styled.TouchableOpacity`
   background: ${({ theme }) => theme.colors.primary};
 `;
 
-export const DebtButtonText = styled.Text`
+export const StyledText = styled.Text`
   color: #fff;
   font-size: 13px;
   min-width: 80px;

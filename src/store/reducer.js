@@ -21,8 +21,28 @@ const initialState = {
       id: 3,
       name: 'Ktoś o bardzo długiej nazwie aby się nie mieściła',
       value: 5004,
-    }
-  ]
+    },
+    {
+      id: 4,
+      name: 'Dyzio',
+      value: 300,
+    },
+    {
+      id: 5,
+      name: 'Arkadiusz Ogarkowski',
+      value: 300,
+    },
+    {
+      id: 6,
+      name: 'Arek Ogarek',
+      value: -54,
+    },
+    {
+      id: 7,
+      name: 'Ktoś o bardzo długiej nazwie aby się nie mieściła',
+      value: 5004,
+    },
+  ],
 };
 
 export const reducer = (state = initialState, action) => {

@@ -6,6 +6,8 @@ export const getHeaderTitle = (path) => {
       return 'Statystyki';
     case '/about':
       return 'O aplikacji';
+    case '/addDebt':
+      return 'Dodaj dłużnika';
     default:
       return 'Zeszycik';
   }

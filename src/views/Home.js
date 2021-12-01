@@ -1,17 +1,11 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import { DebtElement } from 'components/organisms/DebtElement/DebtElement';
+import { DebtsList } from 'components/organisms/DebtsList/DebtsList';
 
 const Home = () => {
-  const debts = useSelector((state) => state.debts);
-
   return (
     <>
       {/* Sortowanie */}
-      {debts.map((debt) => (
-        <DebtElement key={debt.id} {...debt} />
-      ))}
-      {/* Przycisk do dodawania */}
+      <DebtsList />
     </>
   );
 };

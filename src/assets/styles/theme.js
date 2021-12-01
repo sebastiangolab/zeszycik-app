@@ -6,8 +6,10 @@ export const theme = {
     white: '#fff',
   },
   fontSize: {
+    AddDebtIcon: '25px',
     headerTitle: '25px',
     menuIcon: '23px',
+    xl: '20px',
     m: '15px',
     s: '13px',
   },
