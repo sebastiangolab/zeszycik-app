@@ -4,13 +4,16 @@ import { ThemeProvider } from 'styled-components';
 import { theme } from 'assets/styles/theme';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
+import { SortDebtsProvider } from './SortDebtsProvider';
 import { store } from 'store';
 
 export const AppProviders = ({ children }) => (
   <Provider store={store}>
-    <NativeRouter>
-      <ThemeProvider theme={theme}>{children}</ThemeProvider>
-    </NativeRouter>
+    <SortDebtsProvider>
+      <NativeRouter>
+        <ThemeProvider theme={theme}>{children}</ThemeProvider>
+      </NativeRouter>
+    </SortDebtsProvider>
   </Provider>
 );
 

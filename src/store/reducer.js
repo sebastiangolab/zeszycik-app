@@ -5,7 +5,7 @@ const initialState = {
     {
       id: 0,
       name: 'Dyzio',
-      value: 300,
+      value: 100,
     },
     {
       id: 1,
@@ -14,13 +14,13 @@ const initialState = {
     },
     {
       id: 2,
-      name: 'Arek Ogarek',
+      name: 'Aresk Ogarek',
       value: -54,
     },
     {
       id: 3,
-      name: 'Ktoś o bardzo długiej nazwie aby się nie mieściła',
-      value: 5004,
+      name: 'Patryk',
+      value: 5005,
     },
     {
       id: 4,
@@ -30,7 +30,7 @@ const initialState = {
     {
       id: 5,
       name: 'Arkadiusz Ogarkowski',
-      value: 300,
+      value: 200,
     },
     {
       id: 6,

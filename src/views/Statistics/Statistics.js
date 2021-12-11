@@ -1,25 +1,34 @@
 import React from 'react';
 import { Element } from 'components/atoms/Element/Element';
 import { Title, Value } from './Statistics.styles';
+import { useSelector } from 'react-redux';
+import {
+  getTotalValue,
+  getDebtorsCount,
+  getHighestDebt,
+  getLowestDebt,
+} from 'helpers/StatisticsHelpers';
 
 const Statistics = () => {
+  const debts = useSelector((state) => state.debts);
+
   return (
     <>
       <Element>
         <Title>Aktualnie pożyczasz:</Title>
-        <Value>913 zł</Value>
+        <Value>{getTotalValue(debts)}</Value>
       </Element>
       <Element>
         <Title>Liczba dłużników:</Title>
-        <Value>5</Value>
+        <Value>{getDebtorsCount(debts)}</Value>
       </Element>
       <Element>
         <Title>Najwięcej pożycza:</Title>
-        <Value>Klaudia</Value>
+        <Value>{getHighestDebt(debts)}</Value>
       </Element>
       <Element>
         <Title>Najmniej pożycza:</Title>
-        <Value>Igor</Value>
+        <Value>{getLowestDebt(debts)}</Value>
       </Element>
     </>
   );
