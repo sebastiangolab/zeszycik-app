@@ -1,8 +1,16 @@
-import React from 'react';
-import { Text } from 'react-native';
+import React, { useState } from 'react';
+import { SearchForm } from 'components/organisms/SearchForm/SearchForm';
+import { DebtsList } from 'components/organisms/DebtsList/DebtsList';
 
 const Search = () => {
-  return <Text>Search</Text>;
+  const [searchPhrase, setSearchPhrase] = useState('');
+
+  return (
+    <>
+      <SearchForm setSearchPhrase={setSearchPhrase} />
+      <DebtsList searchPhrase={searchPhrase} />
+    </>
+  );
 };
 
 export default Search;

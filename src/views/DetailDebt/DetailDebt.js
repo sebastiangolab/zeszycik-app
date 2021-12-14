@@ -15,7 +15,7 @@ const DetailDebt = () => {
         <DebtorName>{selectDebt.name}</DebtorName>
         <DebtValue>{selectDebt.value} zł</DebtValue>
       </Element>
-      {selectDebt.history.map((element) => <HistoryElement key={element.date} {...element} />)}
+      {selectDebt.history.map((element) => <HistoryElement key={element.id} {...element} />)}
     </>
   );
 };
