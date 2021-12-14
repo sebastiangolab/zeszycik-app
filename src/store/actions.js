@@ -5,9 +5,11 @@ export const addDebts = (payload) => ({
   payload,
 });
 
-export const deleteDebts = (payload) => ({
+export const deleteDebts = (id) => ({
   type: types.deleteDebts,
-  payload,
+  payload: {
+    id,
+  },
 });
 
 export const editDebts = (payload) => ({

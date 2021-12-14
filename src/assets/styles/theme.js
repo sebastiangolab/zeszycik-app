@@ -10,6 +10,7 @@ export const theme = {
     headerTitle: '25px',
     menuIcon: '23px',
     xl: '20px',
+    l: '18px',
     m: '15px',
     s: '13px',
   },

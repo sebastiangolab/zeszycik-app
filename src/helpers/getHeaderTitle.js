@@ -8,6 +8,12 @@ export const getHeaderTitle = (path) => {
       return 'O aplikacji';
     case '/addDebt':
       return 'Dodaj dłużnika';
+    case '/detailDebt':
+      return 'Szczegóły dłużnika';
+    case '/editDebt':
+      return 'Edycja dłużnika';
+    case '/deleteDebt':
+      return 'Usuń dłużnika';
     default:
       return 'Zeszycik';
   }
