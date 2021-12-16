@@ -25,7 +25,8 @@
     "react-router-dom": "^6.0.2",
     "react-router-native": "^6.0.2",
     "redux": "^4.1.2",
-    "styled-components": "^5.3.3"
+    "styled-components": "^5.3.3",
+    "uuid": "^3.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

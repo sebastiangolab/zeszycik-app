@@ -1,8 +1,8 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { AddForm } from 'components/organisms/AddForm/AddForm';
 
 const AddDebt = () => {
-  return <Text>AddDebt</Text>;
+  return <AddForm />;
 };
 
 export default AddDebt;

@@ -1,4 +1,6 @@
 import { types } from 'store/types';
+import { v4 as uuid } from 'uuid';
+import { getCurrentDate } from 'helpers/getCurrentDate';
 
 const initialState = {
   debts: [
@@ -256,7 +258,25 @@ const initialState = {
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
     case types.addDebts:
-      return state;
+      return {
+        ...state,
+        debts: [
+          ...state.debts,
+          {
+            id: uuid(),
+            name: action.payload.name,
+            value: action.payload.debtValue,
+            history: [
+              {
+                id: uuid(),
+                date: getCurrentDate(),
+                value: Math.abs(action.payload.debtValue),
+                mark: action.payload.debtValue < 0 ? '-' : '+',
+              },
+            ],
+          },
+        ],
+      };
 
     case types.deleteDebts:
       return {

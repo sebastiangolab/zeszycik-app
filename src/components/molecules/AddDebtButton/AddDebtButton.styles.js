@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import { Link } from 'react-router-native';
 
 export const Container = styled.View`
   display: flex;
@@ -7,7 +8,7 @@ export const Container = styled.View`
   padding-top: 10px;
 `;
 
-export const Wrapper = styled.TouchableOpacity`
+export const Wrapper = styled(Link)`
   width: 185px;
   background-color: ${({ theme }) => theme.colors.primary};
   display: flex;
