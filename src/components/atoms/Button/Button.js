@@ -1,8 +1,12 @@
 import React from 'react';
+import { Text } from 'react-native';
 import { Wrapper, StyledText } from './Button.styles';
 
-export const Button = ({ children, ...props }) => (
+export const Button = ({ children, isCustomStyledText = false, ...props }) => (
   <Wrapper {...props}>
-    <StyledText>{children}</StyledText>
+    {isCustomStyledText 
+      ? <Text>{children}</Text>
+      : <StyledText>{children}</StyledText>
+    }
   </Wrapper>
 );

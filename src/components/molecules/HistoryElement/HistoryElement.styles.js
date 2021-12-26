@@ -7,6 +7,8 @@ export const Wrapper = styled(Element)`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    padding-bottom: ${({ isDescription }) => isDescription ? '5px' : '13px'};
 `;
 
 export const Date = styled.Text`
@@ -15,4 +17,19 @@ export const Date = styled.Text`
 
 export const Value = styled.Text`
     flex: 1;
+`;
+
+export const DescriptionLine = styled.View`
+    width: 100%;
+    margin-top: 15px;
+    border-top-width: 1px;
+    border-style: solid;
+    border-top-color: #ddd;
+`;
+
+export const Description = styled.Text`
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: 300;
+    padding-top: 10px;
 `;

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Text } from 'react-native';
 import { Formik } from 'formik';
 import { FormikField } from 'components/molecules/FormikField/FormikField';
 import PropTypes from 'prop-types';
@@ -8,11 +9,13 @@ export const SearchForm = ({ setSearchPhrase }) => {
 
   return (
     <Formik initialValues={{ phrase: '' }}>
-      {({ handleChange, values }) => (
+      {({ setFieldValue, values }) => (
         <FormikField
           label="Wpisz nazwę dłużnika"
-          onChangeText={handleChange('phrase')}
-          onChange={handleOnChange(values.phrase)}
+          onChangeText={(e) => {
+            setFieldValue('phrase', e);
+            handleOnChange(e);
+          }}
           value={values.phrase}
         />
       )}

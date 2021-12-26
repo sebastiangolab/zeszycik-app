@@ -1,7 +1,9 @@
 import React from 'react';
 import { Element } from 'components/atoms/Element/Element';
 import { Strong } from 'components/atoms/Strong/Strong';
-import { Title, StyledText, ThanksText } from './About.styles';
+import { Title, StyledText } from './About.styles';
+import { Link } from 'react-router-native';
+import { theme } from 'assets/styles/theme';
 
 const About = () => (
   <>
@@ -16,10 +18,8 @@ const About = () => (
       </StyledText>
     </Element>
 
-    <Element>
-      <ThanksText>
-        Podziękowania dla Igora Gielasa (na snapie krulzloty) za pomysł na aplikacje
-      </ThanksText>
+    <Element as={Link} to="/privacy" underlayColor={theme.colors.white}>
+      <StyledText isLink={true}>Polityka prywatności</StyledText>
     </Element>
   </>
 );

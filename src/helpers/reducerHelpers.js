@@ -1,3 +1,7 @@
+export const getDebtsWithoutId = (debts, id) => debts.filter((debt) => debt.id != id);
+
+export const getSelectDebt = (debts, id) => debts.find(debt => debt.id == id);
+
 export const getCurrentDate = () => {
     let today = new Date();
     const dd = String(today.getDate()).padStart(2, '0');

@@ -5,9 +5,10 @@ import Search from 'views/Search';
 import Statistics from 'views/Statistics/Statistics';
 import About from 'views/About/About';
 import AddDebt from 'views/AddDebt';
-import DetailDebt from 'views/DetailDebt/DetailDebt';
+import DetailDebt from 'views/DetailDebt';
 import EditDebt from 'views/EditDebt';
 import DeleteDebt from 'views/DeleteDebt';
+import PrivacyPolicy from 'views/PrivacyPolicy';
 
 export const RoutesList = () => (
   <Routes>
@@ -19,5 +20,6 @@ export const RoutesList = () => (
     <Route exact path="/detailDebt/:id" element={<DetailDebt />} />
     <Route exact path="/editDebt/:id" element={<EditDebt />} />
     <Route exact path="/deleteDebt/:id" element={<DeleteDebt />} />
+    <Route exact path="/privacy" element={<PrivacyPolicy />} />
   </Routes>
 );

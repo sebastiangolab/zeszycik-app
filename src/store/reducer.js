@@ -1,6 +1,6 @@
 import { types } from 'store/types';
 import { v4 as uuid } from 'uuid';
-import { getCurrentDate } from 'helpers/getCurrentDate';
+import { getDebtsWithoutId, getSelectDebt, getCurrentDate } from 'helpers/reducerHelpers';
 
 const initialState = {
   debts: [
@@ -14,6 +14,7 @@ const initialState = {
           date: '01.12.2021',
           value: 20,
           mark: '+',
+          description: 'Test'
         },
         {
           id: 299,
@@ -122,37 +123,6 @@ const initialState = {
         },
         {
           id: 1699,
-          date: '08.12.2021',
-          value: 100,
-          mark: '+',
-        },
-      ],
-    },
-    {
-      id: 4,
-      name: 'Dyzio',
-      value: 300,
-      history: [
-        {
-          id: 1799,
-          date: '01.12.2021',
-          value: 20,
-          mark: '+',
-        },
-        {
-          id: 1899,
-          date: '03.12.2021',
-          value: 10,
-          mark: '-',
-        },
-        {
-          id: 1999,
-          date: '04.12.2021',
-          value: 10,
-          mark: '-',
-        },
-        {
-          id: 2099,
           date: '08.12.2021',
           value: 100,
           mark: '+',
@@ -271,7 +241,8 @@ export const reducer = (state = initialState, action) => {
                 id: uuid(),
                 date: getCurrentDate(),
                 value: Math.abs(action.payload.debtValue),
-                mark: action.payload.debtValue < 0 ? '-' : '+',
+                mark: action.payload.mark,
+                description: action.payload.description,
               },
             ],
           },
@@ -281,11 +252,64 @@ export const reducer = (state = initialState, action) => {
     case types.deleteDebts:
       return {
         ...state,
-        debts: state.debts.filter((debt) => debt.id != action.payload.id),
+        debts: getDebtsWithoutId(state.debts, action.payload.id),
       };
 
-    case types.editDebts:
-      return state;
+    case types.addValueToDebt:
+      return {
+        ...state,
+        debts: [
+          ...getDebtsWithoutId(state.debts, action.payload.id),
+          {
+            ...getSelectDebt(state.debts, action.payload.id),
+            value: getSelectDebt(state.debts, action.payload.id).value + action.payload.editValue,
+            history: [
+              {
+                id: uuid(),
+                date: getCurrentDate(),
+                value: Math.abs(action.payload.editValue),
+                mark: '+',
+                description: action.payload.description,
+              },
+              ...getSelectDebt(state.debts, action.payload.id).history,
+            ],
+          },
+        ],
+      };
+
+    case types.removeValueFromDebt:
+      return {
+        ...state,
+        debts: [
+          ...getDebtsWithoutId(state.debts, action.payload.id),
+          {
+            ...getSelectDebt(state.debts, action.payload.id),
+            value: getSelectDebt(state.debts, action.payload.id).value - action.payload.editValue,
+            history: [
+              {
+                id: uuid(),
+                date: getCurrentDate(),
+                value: Math.abs(action.payload.editValue),
+                mark: '-',
+                description: action.payload.description,
+              },
+              ...getSelectDebt(state.debts, action.payload.id).history,
+            ],
+          },
+        ],
+      };
+
+    case types.changeDebtorName:
+      return {
+        ...state,
+        debts: [
+          ...getDebtsWithoutId(state.debts, action.payload.id),
+          {
+            ...getSelectDebt(state.debts, action.payload.id),
+            name: action.payload.newName,
+          },
+        ],
+      };
 
     default:
       return state;

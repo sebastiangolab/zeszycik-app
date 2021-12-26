@@ -4,6 +4,7 @@ export const theme = {
     primary: '#E2395F',
     black: '#333',
     white: '#fff',
+    error: '#ff0000',
   },
   fontSize: {
     AddDebtIcon: '25px',

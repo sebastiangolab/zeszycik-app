@@ -2,7 +2,8 @@ import styled from "styled-components/native";
 import { TextInput } from "react-native";
 
 export const StyledInput = styled(TextInput)`
-  padding: 13px 14px 13px 14px;
+  padding: ${({ isFocus }) => (isFocus ? '12px 14px' : '13px 14px')};
+  padding-left: ${({ isMarkSwitchButton }) => isMarkSwitchButton ? '55px' : '14px'};
   border-radius: 5px;
   background-color: ${({ theme }) => theme.colors.white};
   font-size: ${({ theme }) => theme.fontSize.m};

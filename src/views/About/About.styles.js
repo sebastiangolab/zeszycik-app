@@ -9,12 +9,7 @@ export const Title = styled.Text`
 export const StyledText = styled.Text`
   text-align: center;
   font-size: ${({ theme }) => theme.fontSize.m};
-  color: ${({ theme }) => theme.colors.black};
-  margin-top: 10px;
+  color: ${({ isLink, theme }) => isLink ? theme.colors.primary : theme.colors.black};
+  margin-top: ${({isLink}) => isLink ? '0' : '10px'};
 `;
 
-export const ThanksText = styled.Text`
-  font-size: ${({ theme }) => theme.fontSize.s};
-  color: ${({ theme }) => theme.colors.black};
-  line-height: 20px;
-`;
