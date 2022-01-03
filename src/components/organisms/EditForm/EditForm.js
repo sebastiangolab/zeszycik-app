@@ -13,7 +13,8 @@ export const EditForm = ({ id }) => {
   const navigate = useNavigate()
 
   const handleOnSubmit = ({ editValue, newName, description, editActionForm }) => {
-    const prasedEditValue = parseFloat(editValue);
+    const numberEditValue = editValue.replace(',', '.');
+    const prasedEditValue = parseFloat(numberEditValue);
 
     switch (editActionForm) {
       case 'add':

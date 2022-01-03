@@ -1,9 +1,9 @@
 import * as Yup from 'yup';
 
 export const ValidationSchema = Yup.object().shape({
-  editValue: Yup.number().when('editActionForm', {
+  editValue: Yup.string().when('editActionForm', {
     is: (val) => ['add', 'delete'].includes(val),
-    then: Yup.number().required('Pole jest wymagane'),
+    then: Yup.string().required('Pole jest wymagane'),
   }),
 
   newName: Yup.string().when('editActionForm', {

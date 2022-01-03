@@ -13,7 +13,8 @@ export const AddForm = () => {
   const navigate = useNavigate();
 
   const handleOnSubmit = ({ name, debtValue, mark, description }) => {
-    const parsedDebtValue = mark === '-' ? parseFloat(debtValue) * -1 : parseFloat(debtValue);
+    const numberDebtValue = debtValue.replace(',', '.');
+    const parsedDebtValue = mark === '-' ? parseFloat(numberDebtValue) * -1 : parseFloat(numberDebtValue);
     dispatch(addDebts(name, parsedDebtValue, mark, description));
     navigate('/');
   };
