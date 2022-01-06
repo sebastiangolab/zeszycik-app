@@ -15,7 +15,6 @@ export const Wrapper = styled(Button)`
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: ${Platform.OS === 'android' ? '9px' : 0};
 `;
 
 export const StyledText = styled.Text`

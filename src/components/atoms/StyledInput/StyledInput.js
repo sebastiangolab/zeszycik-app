@@ -16,5 +16,5 @@ export const StyledInput = styled(TextInput)`
       : Platform.OS === 'android'
       ? '1px solid #ddd'
       : 'none'};
-  height: ${Platform.OS === 'android' ? '45px' : auto};
+  height: ${Platform.OS === 'android' ? '45px' : 'auto'};
 `;
