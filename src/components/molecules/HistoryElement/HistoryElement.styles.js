@@ -1,5 +1,6 @@
 import { Element } from 'components/atoms/Element/Element';
 import styled from 'styled-components/native';
+import { Platform } from 'react-native';
 
 export const Wrapper = styled(Element)`
   display: flex;
@@ -9,6 +10,7 @@ export const Wrapper = styled(Element)`
   align-items: center;
   flex-wrap: wrap;
   padding-bottom: ${({ isDescription }) => (isDescription ? '5px' : '13px')};
+  border: ${Platform.OS === 'android' ? '1px solid #ddd' : 'none'};
 `;
 
 export const Date = styled.Text`

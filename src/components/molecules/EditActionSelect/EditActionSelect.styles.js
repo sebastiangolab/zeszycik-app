@@ -1,5 +1,6 @@
 import styled from 'styled-components/native';
 import Icon from 'react-native-vector-icons/AntDesign';
+import { Platform } from 'react-native';
 
 export const EditSelectButton = styled.TouchableHighlight`
   padding: 13px 14px;
@@ -11,6 +12,7 @@ export const EditSelectButton = styled.TouchableHighlight`
   align-items: center;
   justify-content: space-between;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  border: ${Platform.OS === 'android' ? '1px solid #ddd' : 'none'};
 `;
 
 export const EditButtonText = styled.Text`

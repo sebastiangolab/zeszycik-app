@@ -1,5 +1,6 @@
 import styled from 'styled-components/native';
 import { Element } from 'components/atoms/Element/Element';
+import { Platform } from 'react-native';
 
 export const Wrapper = styled(Element)`
   display: flex;
@@ -7,6 +8,7 @@ export const Wrapper = styled(Element)`
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  border: ${Platform.OS === 'android' ? '1px solid #ddd' : 'none'};
 `;
 
 export const DebtName = styled.Text`

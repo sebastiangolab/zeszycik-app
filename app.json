@@ -13,15 +13,20 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.sebagolab.Zeszycik"
     },
     "android": {
+      "softwareKeyboardLayoutMode":"pan",
       "adaptiveIcon": {
         "foregroundImage": "./icons/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.sebagolab.Zeszycik"
     },
     "web": {
       "favicon": "./icons/favicon.png"

@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import { Platform } from 'react-native';
 
 export const Element = styled.View`
   border-radius: 5px;
@@ -7,4 +8,5 @@ export const Element = styled.View`
   padding-bottom: 13px;
   margin-bottom: 18px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  border: ${Platform.OS === 'android' ? '1px solid #ddd' : 'none'};
 `;
