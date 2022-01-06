@@ -6,6 +6,7 @@ import { SortDebtsContext } from 'providers/SortDebtsProvider';
 import { sortDebts } from 'helpers/sortDebts';
 import { checkSearchPhrase } from 'helpers/checkSearchPhrase';
 import PropTypes from 'prop-types';
+import { CenterText } from 'components/atoms/CenterText/CenterText';
 
 export const DebtsList = ({ searchPhrase = '' }) => {
   const debts = useSelector((state) => state.debts);
@@ -19,6 +20,9 @@ export const DebtsList = ({ searchPhrase = '' }) => {
         if (checkSearchPhrase(debt.name, searchPhrase))
           return <DebtElement key={debt.id} {...debt} />;
       })}
+      {sortedDebts.length === 0 &&
+        <CenterText>Nie masz aktualnie żadnych dłużników</CenterText>
+      }
     </Wrapper>
   );
 };

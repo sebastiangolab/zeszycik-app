@@ -3,6 +3,7 @@ import { FormField } from 'components/atoms/FormField/FormField';
 import { StyledInput } from 'components/atoms/StyledInput/StyledInput';
 import { InputLabel } from 'components/atoms/InputLabel/InputLabel';
 import { ErrorText } from 'components/atoms/ErrorText/ErrorText';
+import { checkIsEditForm } from 'helpers/checkIsEditForm';
 import PropTypes from 'prop-types';
 
 export const FormikField = ({
@@ -11,7 +12,8 @@ export const FormikField = ({
   errorText,
   errorTouched,
   children,
-  isMarkSwitchButton,
+  isMarkSwitchButton = false,
+  isEditForm = true,
   ...props
 }) => {
   const [isFocus, setIsFocus] = useState(false);
@@ -27,7 +29,7 @@ export const FormikField = ({
         isMarkSwitchButton={isMarkSwitchButton}
         keyboardType={type === 'number' ? 'numeric' : 'default'}
       />
-      {errorText && errorTouched && <ErrorText>{errorText}</ErrorText>}
+      {checkIsEditForm(isEditForm, errorText, errorTouched) && <ErrorText>{errorText}</ErrorText>}
       {children}
     </FormField>
   );
@@ -38,4 +40,6 @@ FormikField.propTypes = {
   label: PropTypes.string.isRequired,
   errorText: PropTypes.string,
   errorTouched: PropTypes.bool,
+  isMarkSwitchButton: PropTypes.bool,
+  isEditForm: PropTypes.bool,
 };

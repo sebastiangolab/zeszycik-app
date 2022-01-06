@@ -10,19 +10,22 @@ import { addValueToDebt, removeValueFromDebt, changeDebtorName } from 'store/act
 
 export const EditForm = ({ id }) => {
   const dispatch = useDispatch();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleOnSubmit = ({ editValue, newName, description, editActionForm }) => {
-    const numberEditValue = editValue.replace(',', '.');
-    const prasedEditValue = parseFloat(numberEditValue);
+    let finalEditValue = editValue;
+    if (editActionForm !== 'editName') {
+      const numberEditValue = editValue.replace(',', '.');
+      finalEditValue = Math.round(parseFloat(numberEditValue) * 100) / 100;
+    }
 
     switch (editActionForm) {
       case 'add':
-        dispatch(addValueToDebt(id, prasedEditValue, description));
+        dispatch(addValueToDebt(id, finalEditValue, description));
         navigate('/');
         break;
       case 'delete':
-        dispatch(removeValueFromDebt(id, prasedEditValue, description));
+        dispatch(removeValueFromDebt(id, finalEditValue, description));
         navigate('/');
         break;
       case 'editName':
@@ -42,14 +45,14 @@ export const EditForm = ({ id }) => {
       }}
       validationSchema={ValidationSchema}
       onSubmit={(values) => handleOnSubmit(values)}>
-      {({ handleChange, values, handleSubmit, errors, touched, setFieldValue, resetForm }) => (
+      {({ handleChange, values, handleSubmit, errors, touched, setFieldValue, resetForm, setTouched }) => (
         <>
           <EditActionSelect
             label="Co chcesz zrobić?"
             name="editActionForm"
-            selectValue={values.editActionForm}
             setEditActionForm={setFieldValue}
             resetFormValues={resetForm}
+            setTouched={setTouched}
           />
 
           {values.editActionForm === 'editName' && (

@@ -14,7 +14,8 @@ export const AddForm = () => {
 
   const handleOnSubmit = ({ name, debtValue, mark, description }) => {
     const numberDebtValue = debtValue.replace(',', '.');
-    const parsedDebtValue = mark === '-' ? parseFloat(numberDebtValue) * -1 : parseFloat(numberDebtValue);
+    const parsedDebtValue =
+      mark === '-' ? parseFloat(numberDebtValue) * -1 : parseFloat(numberDebtValue);
     dispatch(addDebts(name, parsedDebtValue, mark, description));
     navigate('/');
   };
@@ -38,6 +39,7 @@ export const AddForm = () => {
             value={values.name}
             errorText={errors.name}
             errorTouched={touched.name}
+            isEditForm={false}
           />
 
           <FormikField
@@ -48,7 +50,9 @@ export const AddForm = () => {
             value={values.debtValue}
             errorText={errors.debtValue}
             errorTouched={touched.debtValue}
-            isMarkSwitchButton={true}>
+            isMarkSwitchButton={true}
+            isEditForm={false}
+          >
             <MarkSwitchButton mark={values.mark} setMark={setFieldValue} />
           </FormikField>
 
@@ -59,6 +63,7 @@ export const AddForm = () => {
             value={values.description}
             errorText={errors.description}
             errorTouched={touched.description}
+            isEditForm={false}
           />
 
           <FormButton onPress={handleSubmit}>Dodaj</FormButton>

@@ -1,51 +1,23 @@
-import Icon from 'react-native-vector-icons/AntDesign';
 import styled from 'styled-components/native';
+import Icon from 'react-native-vector-icons/AntDesign';
 
-export const pickerStyle = {
-  inputIOS: {
-    paddingTop: 13,
-    paddingBottom: 13,
-    paddingLeft: 14,
-    paddingRight: 14,
-    borderRadius: 5,
-    backgroundColor: '#fff',
-    color: '#333',
-    fontSize: 16,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 1,
-    },
-    shadowOpacity: 0.23,
-    shadowRadius: 2.62,
-    elevation: 4,
-  },
+export const EditSelectButton = styled.TouchableHighlight`
+  padding: 13px 14px;
+  padding-left: 14px};
+  border-radius: 5px;
+  background-color: ${({ theme }) => theme.colors.white};
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+`;
 
-  inputAndroid: {
-    paddingTop: 13,
-    paddingBottom: 13,
-    paddingLeft: 14,
-    paddingRight: 14,
-    borderRadius: 5,
-    backgroundColor: '#fff',
-    color: '#333',
-    fontSize: 16,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 1,
-    },
-    shadowOpacity: 0.23,
-    shadowRadius: 2.62,
-    elevation: 4,
-  },
+export const EditButtonText = styled.Text`
+  color: ${({ theme }) => theme.colors.black};
+  font-size: ${({ theme }) => theme.fontSize.m};
+`;
 
-  iconContainer: {
-    top: 18,
-    right: 12,
-  },
-};
-
-export const PickerIcon = styled(Icon)`
-  color: #333;
+export const EditButtonIcon = styled(Icon)`
+  color: ${({ theme }) => theme.colors.black};
 `;

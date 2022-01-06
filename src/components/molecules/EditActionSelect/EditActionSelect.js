@@ -1,44 +1,71 @@
-import React, { useEffect, useState } from 'react';
-import RNPickerSelect from 'react-native-picker-select';
-import { pickerStyle, PickerIcon } from './EditActionSelect.styles';
+import React, { useState } from 'react';
+import { EditSelectButton, EditButtonText, EditButtonIcon } from './EditActionSelect.styles';
 import { InputLabel } from 'components/atoms/InputLabel/InputLabel';
 import { FormField } from 'components/atoms/FormField/FormField';
+import PropTypes from 'prop-types';
+import { SelectModal } from 'components/organisms/SelectModal/SelectModal';
+import { theme } from 'assets/styles/theme';
+import { getEditTypeName } from 'helpers/getEditTypeName';
 
 export const EditActionSelect = ({
   label,
-  selectValue,
   name,
   setEditActionForm,
   resetFormValues,
+  setTouched,
 }) => {
   const [editActionValue, setEditActionValue] = useState('add');
+  const [modalVisible, setModalVisible] = useState(false);
 
-  useEffect(() => {
-    setEditActionValue(selectValue);
-  }, []);
+  const editOptions = [
+    {
+      text: 'Dodać do długu',
+      value: 'add',
+    },
+    {
+      text: 'Odjąć od długu',
+      value: 'delete',
+    },
+    {
+      text: 'Zmienić nazwę',
+      value: 'editName',
+    },
+  ];
+
+  const handleSelectOption = (value) => {
+    setEditActionValue(value);
+    setModalVisible(false);
+    setEditActionForm(name, value, false);
+    setTouched({}, false);
+    resetFormValues({ values: { editActionForm: value } });
+  };
 
   return (
-    <FormField>
-      <InputLabel>{label}</InputLabel>
-      <RNPickerSelect
-        style={pickerStyle}
-        value={editActionValue}
-        placeholder={{}}
-        onValueChange={(value) => {
-          setEditActionForm(name, value, false);
-          setEditActionValue(value);
-          resetFormValues({ values: { editActionForm: editActionValue } });
-        }}
-        useNativeAndroidPickerStyle={false}
-        items={[
-          { label: 'Dodać do długu', value: 'add' },
-          { label: 'Odjąć od długu', value: 'delete' },
-          { label: 'Zmienić nazwę', value: 'editName' },
-        ]}
-        Icon={() => {
-          return <PickerIcon name="down" />;
-        }}
+    <>
+      <FormField>
+        <InputLabel>{label}</InputLabel>
+        <EditSelectButton
+          onPress={() => setModalVisible(true)}
+          underlayColor={theme.colors.white}
+          activeOpacity={0.6}>
+          <>
+            <EditButtonText>{getEditTypeName(editActionValue)}</EditButtonText>
+            <EditButtonIcon name="down" />
+          </>
+        </EditSelectButton>
+      </FormField>
+      <SelectModal
+        isOpen={modalVisible}
+        handleSelectOption={handleSelectOption}
+        options={editOptions}
       />
-    </FormField>
+    </>
   );
+};
+
+EditActionSelect.propTypes = {
+  label: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  setEditActionForm: PropTypes.func.isRequired,
+  resetFormValues: PropTypes.func.isRequired,
 };

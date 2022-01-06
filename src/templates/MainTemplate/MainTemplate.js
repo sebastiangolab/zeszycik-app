@@ -17,7 +17,7 @@ export const MainTemplate = () => {
           <RoutesList />
         </Content>
         {location.pathname === '/' && (
-          <AddDebtButton />
+            <AddDebtButton />
         )}
         <Menu />
       </Wrapper>

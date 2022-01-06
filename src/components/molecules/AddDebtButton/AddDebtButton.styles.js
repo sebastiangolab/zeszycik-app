@@ -9,20 +9,20 @@ export const Container = styled.View`
 `;
 
 export const Wrapper = styled(Link)`
-  width: 185px;
+  min-width: 185px;
   background-color: ${({ theme }) => theme.colors.primary};
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   border-radius: 50px;
-  padding: 13px 9px 10px 9px;
+  padding: 13px 28px 10px 28px;
   margin: 0 12px;
 `;
 
 export const StyledText = styled.Text`
   color: ${({ theme }) => theme.colors.white};
-  font-size: ${({ theme }) => theme.fontSize.m};
+  font-size: ${({ theme }) => theme.fontSize.addDebtButton};
 `;
 
 export const Icon = styled.Text`
