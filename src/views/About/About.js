@@ -9,7 +9,7 @@ const About = () => (
   <>
     <Element>
       <Title>Aplikacja Zeszycik</Title>
-      <StyledText>Wersja 1.0</StyledText>
+      <StyledText>Wersja 2.0</StyledText>
       <StyledText>
         <Strong>Autor:</Strong> Sebastian Gołąb
       </StyledText>

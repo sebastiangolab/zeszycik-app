@@ -2,7 +2,7 @@
   "expo": {
     "name": "Zeszycik",
     "slug": "Zeszycik",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "orientation": "portrait",
     "icon": "./icons/icon.png",
     "splash": {
@@ -18,7 +18,7 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.sebagolab.Zeszycik"
+      "bundleIdentifier": "com.sebagolab.debtnote"
     },
     "android": {
       "softwareKeyboardLayoutMode":"pan",
@@ -26,7 +26,7 @@
         "foregroundImage": "./icons/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.sebagolab.Zeszycik"
+      "package": "com.sebagolab.debtnote"
     },
     "web": {
       "favicon": "./icons/favicon.png"
