@@ -1,6 +1,7 @@
-import styled from 'styled-components/native';
+import styled from 'styled-components';
+import { Text } from 'react-native';
 
-export const Paragraph = styled.Text`
+export const Paragraph = styled(Text)`
   font-size: ${({ theme }) => theme.fontSize.m};
   line-height: 23px;
   margin-bottom: 15px;

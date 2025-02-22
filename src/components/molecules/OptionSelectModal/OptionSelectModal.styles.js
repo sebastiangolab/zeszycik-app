@@ -1,6 +1,7 @@
-import styled from 'styled-components/native';
+import styled from 'styled-components';
+import { TouchableHighlight, Text } from 'react-native';
 
-export const ModalButton = styled.TouchableHighlight`
+export const ModalButton = styled(TouchableHighlight)`
   background: transparent;
   text-align: center;
   padding: 16px 30px;
@@ -10,7 +11,7 @@ export const ModalButton = styled.TouchableHighlight`
   border-bottom-color: ${({ theme }) => theme.colors.border};
 `;
 
-export const ModalText = styled.Text`
+export const ModalText = styled(Text)`
   font-size: ${({ theme }) => theme.fontSize.modalOption};
   line-height: 22px;
   width: 100%;

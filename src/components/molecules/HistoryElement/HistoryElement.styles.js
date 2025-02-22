@@ -1,6 +1,6 @@
 import { Element } from 'components/atoms/Element/Element';
-import styled from 'styled-components/native';
-import { Platform } from 'react-native';
+import styled from 'styled-components';
+import { Platform, Text, View } from 'react-native';
 
 export const Wrapper = styled(Element)`
   display: flex;
@@ -13,15 +13,15 @@ export const Wrapper = styled(Element)`
   border: ${Platform.OS === 'android' ? '1px solid #ddd' : 'none'};
 `;
 
-export const Date = styled.Text`
+export const Date = styled(Text)`
   width: 65%;
 `;
 
-export const Value = styled.Text`
+export const Value = styled(Text)`
   flex: 1;
 `;
 
-export const DescriptionLine = styled.View`
+export const DescriptionLine = styled(View)`
   width: 100%;
   margin-top: 15px;
   border-top-width: 1px;
@@ -29,7 +29,7 @@ export const DescriptionLine = styled.View`
   border-top-color: ${({ theme }) => theme.colors.border};
 `;
 
-export const Description = styled.Text`
+export const Description = styled(Text)`
   font-size: ${({ theme }) => theme.fontSize.s};
   line-height: 20px;
   font-weight: 300;

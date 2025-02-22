@@ -1,7 +1,7 @@
-import styled from 'styled-components/native';
-import { Platform } from 'react-native';
+import styled from 'styled-components';
+import { Platform, View } from 'react-native';
 
-export const Element = styled.View`
+export const Element = styled(View)`
   border-radius: 5px;
   background: ${({ theme }) => theme.colors.white};
   padding: 15px 15px;

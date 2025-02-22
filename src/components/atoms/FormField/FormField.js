@@ -1,4 +1,4 @@
-import styled from 'styled-components/native';
+import styled from 'styled-components';
 import { View } from 'react-native';
 
 export const FormField = styled(View)`

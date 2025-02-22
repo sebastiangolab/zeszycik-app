@@ -4,16 +4,16 @@ import { Header } from 'components/atoms/Header/Header';
 import { Menu } from 'components/organisms/Menu/Menu';
 import { BackgroundApp, Wrapper, Content } from './MainTemplate.styles';
 import { AddDebtButton } from 'components/molecules/AddDebtButton/AddDebtButton';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useHistory } from 'react-router-dom';
 import { BackHandler } from 'react-native';
 
 export const MainTemplate = () => {
   const location = useLocation();
-  const navigate = useNavigate();
+  const history = useHistory();
 
   useEffect(() => {
     const handleBackButtonClick = () => {
-      navigate(-1)
+      history.goBack();
       return true;
     }  
     BackHandler.addEventListener('hardwareBackPress', handleBackButtonClick);

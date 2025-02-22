@@ -1,7 +1,8 @@
-import styled from 'styled-components/native';
+import styled from 'styled-components';
 import Icon from 'react-native-vector-icons/AntDesign';
+import { TouchableHighlight, Text } from 'react-native';
 
-export const SortButton = styled.TouchableHighlight`
+export const SortButton = styled(TouchableHighlight)`
   padding-top: 13px;
   padding-bottom: 13px;
   padding-left: 14px;
@@ -15,7 +16,7 @@ export const SortButton = styled.TouchableHighlight`
   justify-content: space-between;
 `;
 
-export const SortButtonText = styled.Text`
+export const SortButtonText = styled(Text)`
   color: ${({ theme }) => theme.colors.white};
   font-size: ${({ theme }) => theme.fontSize.modalOption};
 `;

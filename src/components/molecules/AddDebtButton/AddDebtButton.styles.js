@@ -1,7 +1,9 @@
-import styled from 'styled-components/native';
+import styled from 'styled-components';
 import { Link } from 'react-router-native';
+import { Text, View } from 'react-native';
 
-export const Container = styled.View`
+
+export const Container = styled(View)`
   display: flex;
   align-items: flex-end;
   padding-bottom: 16px;
@@ -20,12 +22,12 @@ export const Wrapper = styled(Link)`
   margin: 0 12px;
 `;
 
-export const StyledText = styled.Text`
+export const StyledText = styled(Text)`
   color: ${({ theme }) => theme.colors.white};
   font-size: ${({ theme }) => theme.fontSize.addDebtButton};
 `;
 
-export const Icon = styled.Text`
+export const Icon = styled(Text)`
   color: ${({ theme }) => theme.colors.white};
   font-size: ${({ theme }) => theme.fontSize.AddDebtIcon};
   margin-right: 10px;

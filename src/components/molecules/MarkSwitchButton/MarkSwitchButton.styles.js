@@ -1,10 +1,10 @@
 import { Button } from 'components/atoms/Button/Button';
-import styled from 'styled-components/native';
-import { Platform } from 'react-native';
+import styled from 'styled-components';
+import { Platform, Text } from 'react-native';
 
 export const Wrapper = styled(Button)`
     width: auto;
-    height: 44px
+    height: 44px;
     font-size: 100px;
     position: absolute;
     min-width: 40px;
@@ -17,7 +17,7 @@ export const Wrapper = styled(Button)`
     align-items: center;
 `;
 
-export const StyledText = styled.Text`
+export const StyledText = styled(Text)`
   font-size: ${({ theme }) => theme.fontSize.xl};
   color: ${({ theme }) => theme.colors.white};
 `;

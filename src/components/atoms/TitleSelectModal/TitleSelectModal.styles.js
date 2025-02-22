@@ -1,6 +1,7 @@
-import styled from 'styled-components/native';
+import styled from 'styled-components';
+import { Text, View } from 'react-native';
 
-export const TitleContainer = styled.View`
+export const TitleContainer = styled(View)`
   background: transparent;
   padding-top: 25px;
   padding-bottom: 22px;
@@ -9,7 +10,7 @@ export const TitleContainer = styled.View`
   border-bottom-color: ${({ theme }) => theme.colors.border};
 `;
 
-export const WrapperText = styled.Text`
+export const WrapperText = styled(Text)`
   font-size: ${({ theme }) => theme.fontSize.modalTitle};
   width: 100%;
   text-align: center;

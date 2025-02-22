@@ -1,6 +1,7 @@
-import styled from 'styled-components/native';
+import styled from 'styled-components';
+import { Text } from 'react-native';
 
-export const Wrapper = styled.Text`
+export const Wrapper = styled(Text)`
   width: 100%;
   padding: 11px 15px;
   text-align: center;

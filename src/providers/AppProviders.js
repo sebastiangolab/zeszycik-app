@@ -1,4 +1,7 @@
 import React from 'react';
+import {
+  BrowserRouter as Router,
+} from "react-router-dom";
 import { NativeRouter } from 'react-router-native';
 import { ThemeProvider } from 'styled-components';
 import { theme } from 'assets/styles/theme';
@@ -12,9 +15,11 @@ export const AppProviders = ({ children }) => (
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
       <SortDebtsProvider>
-        <NativeRouter>
-          <ThemeProvider theme={theme}>{children}</ThemeProvider>
-        </NativeRouter>
+        <Router>
+          <NativeRouter>
+            <ThemeProvider theme={theme}>{children}</ThemeProvider>
+          </NativeRouter>
+        </Router>
       </SortDebtsProvider>
     </PersistGate>
   </Provider>

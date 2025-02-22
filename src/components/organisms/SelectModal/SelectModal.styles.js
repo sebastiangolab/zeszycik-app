@@ -1,7 +1,8 @@
-import styled from 'styled-components/native';
+import styled from 'styled-components';
 import { Element } from 'components/atoms/Element/Element';
+import { View } from 'react-native';
 
-export const ModalCenter = styled.View`
+export const ModalCenter = styled(View)`
   position: absolute;
   left: 0;
   top: 0;
@@ -12,7 +13,7 @@ export const ModalCenter = styled.View`
   align-items: center;
 `;
 
-export const ModalBackground = styled.View`
+export const ModalBackground = styled(View)`
   background-color: ${({ theme }) => theme.colors.modalBackground};
   opacity: 0.4;
   position: absolute;

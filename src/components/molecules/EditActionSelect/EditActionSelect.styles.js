@@ -1,10 +1,10 @@
-import styled from 'styled-components/native';
+import styled from 'styled-components';
 import Icon from 'react-native-vector-icons/AntDesign';
-import { Platform } from 'react-native';
+import { Platform, TouchableHighlight, Text } from 'react-native';
 
-export const EditSelectButton = styled.TouchableHighlight`
+export const EditSelectButton = styled(TouchableHighlight)`
   padding: 13px 14px;
-  padding-left: 14px};
+  padding-left: 14px;
   border-radius: 5px;
   background-color: ${({ theme }) => theme.colors.white};
   display: flex;
@@ -15,7 +15,7 @@ export const EditSelectButton = styled.TouchableHighlight`
   border: ${Platform.OS === 'android' ? '1px solid #ddd' : 'none'};
 `;
 
-export const EditButtonText = styled.Text`
+export const EditButtonText = styled(Text)`
   color: ${({ theme }) => theme.colors.black};
   font-size: ${({ theme }) => theme.fontSize.m};
 `;
