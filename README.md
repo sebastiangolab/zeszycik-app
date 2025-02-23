@@ -7,8 +7,10 @@ Appliaction work on ios and android system.
 <!-- BUILD WITH -->
 ## Build With
 <ul>
-  <li><a href="#built-with">React Native</a></li>
-  <li><a href="#built-with">Expo</a></li>
+  <li>React Native</li>
+  <li>Expo</li>
+  <li>Redux</li>
+  <li>Styled Components</li>
 </ul>
 
 <!-- GETTING STARTED -->
@@ -23,11 +25,7 @@ To get a local copy up and running follow these simple steps.
   npm install npm@latest -g
   ```
 
-* node - https://nodejs.org/en/download/
-
-* react native - https://www.npmjs.com/package/react-native
-
-* expo - https://docs.expo.io/get-started/installation/
+* node (project use version 20.17.0) - https://nodejs.org/en/download/
 
 * optional xcode - https://apps.apple.com/pl/app/xcode/id497799835?l=pl&mt=12
 
@@ -47,7 +45,7 @@ To get a local copy up and running follow these simple steps.
    ```
 3. Open in terminal directory with project and run expo
    ```sh
-   expo start
+   npm run start
    ```
 4. If you want open on your phone, use mobile app "Expo Go"
 
@@ -59,4 +57,6 @@ To get a local copy up and running follow these simple steps.
 Sebastian Gołąb - sebagolab97@gmail.com
 
 Project Link: https://github.com/sebastiangolab/debt-notebook
+
+More about me: https://sebastiangolab.pl/
 
