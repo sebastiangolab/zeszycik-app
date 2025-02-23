@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/native';
 import { Element } from 'components/atoms/Element/Element';
 import { View } from 'react-native';
 

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/native';
 import { TouchableHighlight, Text } from 'react-native';
 
 export const ModalButton = styled(TouchableHighlight)`

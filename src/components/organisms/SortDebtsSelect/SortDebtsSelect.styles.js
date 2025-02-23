@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/native';
 import Icon from 'react-native-vector-icons/AntDesign';
 import { TouchableHighlight, Text } from 'react-native';
 

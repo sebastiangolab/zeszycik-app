@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/native';
 import { Link } from 'react-router-native';
 import { Text, View } from 'react-native';
 

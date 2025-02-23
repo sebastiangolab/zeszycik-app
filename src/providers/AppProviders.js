@@ -1,6 +1,6 @@
 import React from 'react';
 import { NativeRouter } from 'react-router-native';
-import { ThemeProvider } from 'styled-components';
+import { ThemeProvider } from 'styled-components/native';
 import { theme } from 'assets/styles/theme';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';

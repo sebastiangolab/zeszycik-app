@@ -41,6 +41,7 @@
   "devDependencies": {
     "@babel/core": "^7.26.9",
     "@babel/plugin-transform-private-methods": "^7.25.9",
+    "@types/styled-components-react-native": "^5.2.5",
     "babel-plugin-module-resolver": "^5.0.2",
     "eslint": "^9.21.0",
     "eslint-plugin-prettier": "^5.2.3",

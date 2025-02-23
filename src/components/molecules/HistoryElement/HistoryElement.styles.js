@@ -1,5 +1,5 @@
 import { Element } from 'components/atoms/Element/Element';
-import styled from 'styled-components';
+import styled from 'styled-components/native';
 import { Platform, Text, View } from 'react-native';
 
 export const Wrapper = styled(Element)`
