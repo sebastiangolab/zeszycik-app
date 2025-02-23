@@ -1,6 +1,7 @@
 export const theme = {
   colors: {
     background: '#f9f9f9',
+    webBackground: '#b5b0b3',
     primary: '#E2395F',
     black: '#333',
     modalBackground: '#000',

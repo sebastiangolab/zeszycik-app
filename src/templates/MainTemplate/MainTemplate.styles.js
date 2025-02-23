@@ -9,7 +9,7 @@ export const BackgroundApp = styled(SafeAreaView)`
   padding-top: ${Platform.OS === "android" ? `${Math.round(StatusBar.currentHeight)}px` : 0};
 
   ${Platform.OS === "web" ? css`
-    background-color: #882038;
+    background-color: ${({ theme }) => theme.colors.webBackground};
     height: 100vh;
   ` : null};
 `;
