@@ -1,9 +1,10 @@
 import React, { useContext, useState } from 'react';
 import { SortDebtsContext } from 'providers/SortDebtsProvider';
-import { SortButton, SortButtonText, SortButtonIcon } from './SortDebtsSelect.styles';
+import { SortButton, SortButtonText } from './SortDebtsSelect.styles';
 import { SelectModal } from 'components/organisms/SelectModal/SelectModal';
 import { getSortName } from 'helpers/getSortName';
 import { theme } from 'assets/styles/theme';
+import ChevronDownIcon from '../../../assets/icons/chevron-down-white.svg';
 
 export const SortDebtsSelect = () => {
   const { sortType, setSortType } = useContext(SortDebtsContext);
@@ -37,7 +38,7 @@ export const SortDebtsSelect = () => {
         activeOpacity={0.6}>
         <>
           <SortButtonText>{getSortName(sortType)}</SortButtonText>
-          <SortButtonIcon name="down" />
+          <ChevronDownIcon />
         </>
       </SortButton>
       <SelectModal

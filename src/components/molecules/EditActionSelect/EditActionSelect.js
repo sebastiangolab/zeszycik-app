@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { EditSelectButton, EditButtonText, EditButtonIcon } from './EditActionSelect.styles';
+import { EditSelectButton, EditButtonText } from './EditActionSelect.styles';
 import { InputLabel } from 'components/atoms/InputLabel/InputLabel';
 import { FormField } from 'components/atoms/FormField/FormField';
 import PropTypes from 'prop-types';
 import { SelectModal } from 'components/organisms/SelectModal/SelectModal';
 import { theme } from 'assets/styles/theme';
 import { getEditTypeName } from 'helpers/getEditTypeName';
+import ChevronDownIcon from '../../../assets/icons/chevron-down.svg';
 
 export const EditActionSelect = ({
   label,
@@ -50,7 +51,7 @@ export const EditActionSelect = ({
           activeOpacity={0.6}>
           <>
             <EditButtonText>{getEditTypeName(editActionValue)}</EditButtonText>
-            <EditButtonIcon name="down" />
+            <ChevronDownIcon />
           </>
         </EditSelectButton>
       </FormField>

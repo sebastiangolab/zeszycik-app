@@ -1,5 +1,4 @@
 import styled from 'styled-components/native';
-import { AntDesign as Icon } from '@expo/vector-icons';
 import { TouchableHighlight, Text } from 'react-native';
 
 export const SortButton = styled(TouchableHighlight)`
@@ -19,8 +18,4 @@ export const SortButton = styled(TouchableHighlight)`
 export const SortButtonText = styled(Text)`
   color: ${({ theme }) => theme.colors.white};
   font-size: ${({ theme }) => theme.fontSize.modalOption};
-`;
-
-export const SortButtonIcon = styled(Icon)`
-  color: ${({ theme }) => theme.colors.white};
 `;

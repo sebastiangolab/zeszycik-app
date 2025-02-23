@@ -4,36 +4,50 @@
     "slug": "Zeszycik",
     "version": "2.0.0",
     "orientation": "portrait",
-    "icon": "./icons/icon.png",
+    "icon": "./src/assets/icons/icon.png",
     "splash": {
-      "image": "./icons/splash.png",
+      "image": "./src/assets/icons/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#E2395F"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.sebagolab.debtnote"
     },
     "android": {
-      "softwareKeyboardLayoutMode":"pan",
+      "softwareKeyboardLayoutMode": "pan",
       "adaptiveIcon": {
-        "foregroundImage": "./icons/adaptive-icon.png",
+        "foregroundImage": "./src/assets/icons/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
       "package": "com.sebagolab.debtnote"
     },
     "web": {
-      "favicon": "./icons/favicon.png"
+      "favicon": "./src/assets/icons/favicon.png"
     },
     "newArchEnabled": true,
     "experiments": {
       "baseUrl": "/zeszycik-app"
+    },
+    "packagerOpts": {
+      "config": "metro.config.js",
+      "sourceExts": [
+        "expo.ts",
+        "expo.tsx",
+        "expo.js",
+        "expo.jsx",
+        "ts",
+        "tsx",
+        "js",
+        "jsx",
+        "json",
+        "wasm",
+        "svg"
+      ]
     }
   }
 }

@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { TouchableOpacity } from 'react-native';
 import { Wrapper, DebtName, DebtValue } from './DebtElement.styles';
 import { DebtOptions } from 'components/molecules/DebtOptions/DebtOptions';
-import { AntDesign as Icon } from '@expo/vector-icons';
+import ChevronUpIcon from '../../../assets/icons/chevron-up.svg';
+import ChevronDownIcon from '../../../assets/icons/chevron-down.svg';
 
 export const DebtElement = ({ id, name, value }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,7 +17,7 @@ export const DebtElement = ({ id, name, value }) => {
       <Wrapper>
         <DebtName>{name}</DebtName>
         <DebtValue>{value} zł</DebtValue>
-        {isOpen ? <Icon name="up" /> : <Icon name="down" />}
+        {isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />}
         {isOpen && <DebtOptions debtId={id} />}
       </Wrapper>
     </TouchableOpacity>

@@ -1,5 +1,4 @@
 import styled from 'styled-components/native';
-import { AntDesign as Icon } from '@expo/vector-icons';
 import { Platform, TouchableHighlight, Text } from 'react-native';
 
 export const EditSelectButton = styled(TouchableHighlight)`
@@ -18,8 +17,4 @@ export const EditSelectButton = styled(TouchableHighlight)`
 export const EditButtonText = styled(Text)`
   color: ${({ theme }) => theme.colors.black};
   font-size: ${({ theme }) => theme.fontSize.m};
-`;
-
-export const EditButtonIcon = styled(Icon)`
-  color: ${({ theme }) => theme.colors.black};
 `;
