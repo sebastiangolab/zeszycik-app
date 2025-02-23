@@ -1,5 +1,5 @@
 import { types } from 'store/types';
-import { v4 as uuid } from 'uuid';
+import uuid from 'react-native-uuid';
 import { getDebtsWithoutId, getSelectDebt, getCurrentDate } from 'helpers/reducerHelpers';
 
 const initialState = {
@@ -14,12 +14,12 @@ export const reducer = (state = initialState, action) => {
         debts: [
           ...state.debts,
           {
-            id: uuid(),
+            id: uuid.v4(),
             name: action.payload.name,
             value: action.payload.debtValue,
             history: [
               {
-                id: uuid(),
+                id: uuid.v4(),
                 date: getCurrentDate(),
                 value: Math.abs(action.payload.debtValue),
                 mark: action.payload.mark,
@@ -46,7 +46,7 @@ export const reducer = (state = initialState, action) => {
             value: getSelectDebt(state.debts, action.payload.id).value + action.payload.editValue,
             history: [
               {
-                id: uuid(),
+                id: uuid.v4(),
                 date: getCurrentDate(),
                 value: Math.abs(action.payload.editValue),
                 mark: '+',
@@ -68,7 +68,7 @@ export const reducer = (state = initialState, action) => {
             value: getSelectDebt(state.debts, action.payload.id).value - action.payload.editValue,
             history: [
               {
-                id: uuid(),
+                id: uuid.v4(),
                 date: getCurrentDate(),
                 value: Math.abs(action.payload.editValue),
                 mark: '-',

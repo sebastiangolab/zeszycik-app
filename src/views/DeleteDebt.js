@@ -1,11 +1,11 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { Element } from 'components/atoms/Element/Element';
 import { FormButton } from 'components/atoms/FormButton/FormButton';
 import { StyledText } from 'components/atoms/StyledText/StyledText';
 import { deleteDebts } from 'store/actions';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-native';
 
 const DeleteDebt = () => {
   const { id } = useParams();

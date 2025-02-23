@@ -5,7 +5,7 @@ import { FormButton } from 'components/atoms/FormButton/FormButton';
 import { EditActionSelect } from 'components/molecules/EditActionSelect/EditActionSelect';
 import { ValidationSchema } from './EditForm.validation';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-native';
 import { addValueToDebt, removeValueFromDebt, changeDebtorName } from 'store/actions';
 
 export const EditForm = ({ id }) => {

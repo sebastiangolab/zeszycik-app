@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router-native';
 import { useSelector } from 'react-redux';
 import { DebtLabel } from 'components/atoms/DebtLabel/DebtLabel';
 import { EditForm } from 'components/organisms/EditForm/EditForm';

@@ -5,7 +5,7 @@ import { FormButton } from 'components/atoms/FormButton/FormButton';
 import { useDispatch } from 'react-redux';
 import { addDebts } from 'store/actions';
 import { ValidationSchema } from './AddForm.validation';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-native';
 import { MarkSwitchButton } from 'components/molecules/MarkSwitchButton/MarkSwitchButton';
 
 export const AddForm = () => {
@@ -13,6 +13,8 @@ export const AddForm = () => {
   const navigate = useNavigate();
 
   const handleOnSubmit = ({ name, debtValue, mark, description }) => {
+    console.log("dupka")
+
     const numberDebtValue = debtValue.replace(',', '.');
     const parsedDebtValue =
       mark === '-' ? parseFloat(numberDebtValue) * -1 : parseFloat(numberDebtValue);
