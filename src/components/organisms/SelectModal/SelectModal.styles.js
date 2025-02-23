@@ -1,6 +1,6 @@
-import styled from 'styled-components/native';
+import styled, { css } from 'styled-components/native';
 import { Element } from 'components/atoms/Element/Element';
-import { View } from 'react-native';
+import { View, Platform } from 'react-native';
 
 export const ModalCenter = styled(View)`
   position: absolute;
@@ -29,4 +29,10 @@ export const ModalContent = styled(Element)`
   margin-bottom: 15%;
   min-width: 75%;
   max-width: 85%;
+
+  ${Platform.OS === "web" ? css`
+    min-width: auto;
+    width: 380px;
+    max-width: 90vw;
+  ` : null};
 `;

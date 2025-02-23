@@ -19,6 +19,11 @@ export const EditForm = ({ id }) => {
       finalEditValue = Math.round(parseFloat(numberEditValue) * 100) / 100;
     }
 
+    if (finalEditValue !== 0 && !!finalEditValue === false) {
+      navigate('/');
+      return;
+    }
+
     switch (editActionForm) {
       case 'add':
         dispatch(addValueToDebt(id, finalEditValue, description));
@@ -45,7 +50,16 @@ export const EditForm = ({ id }) => {
       }}
       validationSchema={ValidationSchema}
       onSubmit={(values) => handleOnSubmit(values)}>
-      {({ handleChange, values, handleSubmit, errors, touched, setFieldValue, resetForm, setTouched }) => (
+      {({
+        handleChange,
+        values,
+        handleSubmit,
+        errors,
+        touched,
+        setFieldValue,
+        resetForm,
+        setTouched,
+      }) => (
         <>
           <EditActionSelect
             label="Co chcesz zrobić?"

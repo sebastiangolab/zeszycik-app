@@ -8,7 +8,7 @@ export const HistoryElement = ({ date, mark, value, description }) => (
     <Value>
       <PrimaryColor>{mark}</PrimaryColor> {value} zł
     </Value>
-    {description !== '' && 
+    {description && 
       <DescriptionLine>
         <Description>Opis: {description}</Description>
       </DescriptionLine>
