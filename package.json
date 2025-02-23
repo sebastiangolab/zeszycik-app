@@ -4,10 +4,11 @@
     "android": "npx expo run:android",
     "ios": "npx expo run:ios",
     "web": "npx expo start --web",
-    "eject": "npx expo eject",
+    "eject": "npx expo prebuild",
     "lint-check": "eslint --ext .js src/",
     "lint-fix": "npx eslint ./src/**/*.js --fix",
-    "format": "prettier --check ./src"
+    "format": "prettier --check ./src",
+    "build": "npx expo export"
   },
   "dependencies": {
     "@expo/metro-runtime": "~4.0.1",
