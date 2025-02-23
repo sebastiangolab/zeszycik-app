@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { TouchableOpacity } from 'react-native';
 import { Wrapper, DebtName, DebtValue } from './DebtElement.styles';
 import { DebtOptions } from 'components/molecules/DebtOptions/DebtOptions';
-import Icon from 'react-native-vector-icons/AntDesign';
+import { AntDesign as Icon } from '@expo/vector-icons';
 
 export const DebtElement = ({ id, name, value }) => {
   const [isOpen, setIsOpen] = useState(false);
