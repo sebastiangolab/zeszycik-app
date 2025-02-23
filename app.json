@@ -30,6 +30,7 @@
     },
     "web": {
       "favicon": "./icons/favicon.png"
-    }
+    },
+    "newArchEnabled": true
   }
 }
