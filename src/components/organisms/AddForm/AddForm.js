@@ -13,8 +13,6 @@ export const AddForm = () => {
   const navigate = useNavigate();
 
   const handleOnSubmit = ({ name, debtValue, mark, description }) => {
-    console.log("dupka")
-
     const numberDebtValue = debtValue.replace(',', '.');
     const parsedDebtValue =
       mark === '-' ? parseFloat(numberDebtValue) * -1 : parseFloat(numberDebtValue);
