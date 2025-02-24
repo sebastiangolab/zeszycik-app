@@ -984,7 +984,7 @@ __d((function(g,_r,_i,_a,m,_e,d){var e=_r(d[0]);Object.defineProperty(_e,"__esMo
 
   ${t.css`
         background-color: ${({theme:e})=>e.colors.webBackground};
-        height: 100vh;
+        height: 100dvh;
       `};
 `,_e.Wrapper=(0,t.default)(o.default)`
   display: flex;
@@ -1005,8 +1005,8 @@ __d((function(g,_r,_i,_a,m,_e,d){var e=_r(d[0]);Object.defineProperty(_e,"__esMo
 
     ${u<=991&&t.css`
       width: 100%;
-      height: 100svh;
-      max-height: 100svh;
+      height: 100%;
+      max-height: 100%;
       border-radius: 0;
     `}
   `};
