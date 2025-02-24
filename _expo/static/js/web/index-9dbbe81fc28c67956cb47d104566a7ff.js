@@ -1005,7 +1005,7 @@ __d((function(g,_r,_i,_a,m,_e,d){var e=_r(d[0]);Object.defineProperty(_e,"__esMo
 
     ${u<=991&&t.css`
       width: 100%;
-      height: 100vh;
+      height: 100dvh;
       max-height: 100%;
       border-radius: 0;
     `}
